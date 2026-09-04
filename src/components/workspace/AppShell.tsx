@@ -44,7 +44,7 @@ function SidebarNav({ collapsed }: { collapsed: boolean }) {
 
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const current = NAV_ITEMS.find((item) => item.to === pathname) ?? NAV_ITEMS[0];
+  const current = NAV_ITEMS.find((item) => item.to === pathname) ?? NAV_ITEMS[0]!;
 
   return (
     <div className="flex min-h-screen w-full max-w-full overflow-x-hidden">

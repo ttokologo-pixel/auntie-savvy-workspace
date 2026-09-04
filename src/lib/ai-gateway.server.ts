@@ -73,7 +73,7 @@ export async function callSavvy(messages: SavvyMessage[]): Promise<string> {
 /** Extract the first JSON object from a model response. */
 export function extractJson<T>(raw: string): T | null {
   const fenced = raw.match(/```(?:json)?\s*([\s\S]*?)```/);
-  const candidate = (fenced ? fenced[1] : raw).trim();
+  const candidate = (fenced?.[1] ?? raw).trim();
   const start = candidate.indexOf("{");
   const end = candidate.lastIndexOf("}");
   if (start === -1 || end === -1) return null;
