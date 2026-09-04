@@ -38,7 +38,7 @@ export const Route = createFileRoute("/chat")({
       },
     ],
   }),
-  component: AskAuntieSavvy;
+  component: AskAuntieSavvy,
 });
 
 const SUGGESTIONS = [
